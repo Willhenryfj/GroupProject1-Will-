@@ -2,67 +2,78 @@
 #include <iostream>
 
 class Reservation {
+
+    private:
+    // private attributes 
+    std::string reservationID;
+    std::string studentID;
+    std::string name;
+    std::string resourceID;
+    std::string date; 
+
     public:
-    //Constructors
-    Reservation();
-    Reservation(std::string reservationID, std::string studentID, std::string name, std:string resourceID, std:string date){};
+    //Constructor Declarations and Initializations 
+    Reservation(std::string resID, std::string stuID, std::string n, std::string rescID, std::string d){{
+        reservationID = resID;
+        studentID = stuID;
+        name = n;
+        resourceID = rescID;
+        date = d;
+    }
     
-    
-    //Getters and Setters
+    //Getters
     std::string getReservationID() 
     {
-      
+      return reservationID;
     }
     std::string getStudentID() 
     {
-       
+       return studentID;
     }
     std::string getName() 
     {
-       
+       return name;
     }
     std::string getResourceID() 
     {
-       
+       return resourceID;
     }
     std::string getDate() 
     {
-       
+       return date;
     }
 
-    void setResourceID(std::string reservationID) 
+     // Setters                                                                                      
+    void setReservationID(std::string resID) 
     {
-        
+        reservationID = resID;
     }
-    void setStudentID(std::string studentID) 
+    void setStudentID(std::string stuID) 
     {
-       
+       studentID = stuID;
     }
-    void setName(std::string name) 
+    void setName(std::string n) 
     {
-      
+        name = n;
     }
-    void setResourceID(std::string reservationID)
+    void setResourceID(std::string rescID)
     {
-
+        resourceID = rescID;
     }
-    void setDate(std::string date)
+    void setDate(std::string d)
     {
-
+        date = d;
     }
 
     //Display Resource Information to the console
     void DisplayReservationInfo()
     {
-          
+        std::cout << "--- Reservation Details ---\n"
+                  << "Reservation ID: " << reservationID << "\n"
+                  << "Student ID:     " << studentID << "\n"
+                  << "Name:           " << name << "\n"
+                  << "Resource ID:    " << resourceID << "\n"
+                  << "Date:           " << date << "\n"
+                  << "---------------------------\n";
     }
-    private:
-    
-    //Types
-    std::string reservationID;
-    std::string studentID;
-    std::string name;
-    std::string reservationID;
-    std::string date; 
-
 };
